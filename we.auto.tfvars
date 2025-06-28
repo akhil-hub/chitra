@@ -1,11 +1,10 @@
-project       = "newterraformvariables"
-region        = "us-central1"
-zone          = "us-central1-a"
-credentials   = "centralkey.json"
-instance_name = "new"
-machinetype   = "e2-micro"
-boot_disk_image = "debian-cloud/debian-12"
-boot_disk_size_gb =  "10"
-boot_disk_type = "pd-standard"
-boot_disk_auto_delete = "true"
-
+project              = "newterraformvariables"
+region               = "us-central1"
+zone                 = "us-central1-a"
+credentials_file     = "centralkey.json"      # Changed from 'credentials'
+instance_name        = "new"                  # Changed from 'new'
+machine_type         = "e2-micro"             # Changed from 'machinetype'
+boot_disk_image      = "debian-cloud/debian-12"
+boot_disk_size_gb    = 10                     # Removed quotes for number
+boot_disk_type       = "pd-standard"
+boot_disk_auto_delete = true                  # Changed to boolean
