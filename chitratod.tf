@@ -2,7 +2,7 @@ terraform {
   required_providers {
     google = {
       source  = "hashicorp/google"
-      version = "~> 6.8"
+      version = "~> 6.8.0"
     }
   }
 }
@@ -35,5 +35,10 @@ resource "google_compute_instance" "default" {
   network_interface {
     network = google_compute_network.default.id
     access_config {}
+
+  [default]
+output = json
+region = eu-west-1
+source_profile = default
   }
 }
