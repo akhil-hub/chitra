@@ -19,7 +19,7 @@ resource "google_compute_network" "default" {
 }
 
 resource "google_compute_instance" "default" {
-  name         = var.new
+  name         = var.instance_name     # Changed from 'var.new'
   machine_type = var.machine_type
   zone         = var.zone
 
@@ -34,6 +34,6 @@ resource "google_compute_instance" "default" {
 
   network_interface {
     network = google_compute_network.default.id
-    access_config {}  # Needed for external IP (optional)
+    access_config {} # Needed for external IP (optional)
   }
 }
