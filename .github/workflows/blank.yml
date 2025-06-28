@@ -1,23 +1,24 @@
-name: 'Terraform'
+name: Terraform
 
 on:
   push:
-    branches: [ "main" ]
+    branches:
+      - main
   pull_request:
+    branches:
+      - main
 
 permissions:
   contents: read
 
 jobs:
   terraform:
-    name: 'Terraform'
+    name: Terraform
     runs-on: ubuntu-latest
-    environment: production
 
     defaults:
       run:
         shell: bash
-        working-directory: ./
 
     steps:
       - name: Checkout
